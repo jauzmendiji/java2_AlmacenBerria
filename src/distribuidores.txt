@@ -1,0 +1,4 @@
+odei;11111111A;Hernani,Erenozu,79,20120;iker,alba,ikeralba@gmail.com,666666666
+jon;22222222B;Errenteria,Beraun,88,20100;jon,auzmendi,jonauzmendi@gmail.com,677777777
+telmo;33333333C;Donostia,Txirrita,17,20010;telmo,arzelus,telmoarzelus@gmail.com,688888888
+egoitz;44444444D;Lasarte,Oria,30,20009;egoitz,barrena,egoitzbarrena@gmail.com,699999999
