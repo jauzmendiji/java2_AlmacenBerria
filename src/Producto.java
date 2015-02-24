@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public abstract class Producto {
 	
-	private Distribuidor distribuidor;
+	protected Distribuidor distribuidor;
 	private String marca;
 	private Double precio;
-	private String procedencia;
+	protected String procedencia;
 	
 	public Producto(Distribuidor distribuidor, String marca, Double precio, String procedencia) {
 		

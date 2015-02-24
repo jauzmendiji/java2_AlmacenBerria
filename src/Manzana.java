@@ -5,6 +5,24 @@ public class Manzana extends Producto{
 	//propiedades
 	private String tipoManzana;
 	private String color;
+	
+	public Manzana(Distribuidor distribuidor, String marca, Double precio, String procedencia, String tipo, String color) {
+
+		super(distribuidor,marca,precio,procedencia);
+		this.tipoManzana = tipo;
+		this.color = color;
+	}
+	
+	public Manzana(Scanner sc) {
+
+		super(sc);
+		System.out.println("Tipo de manzana (DELICIOUS-GOLDEN-RED):");
+		this.setTipoManzana(sc.next());
+	    System.out.println("Color de la manzana:");
+	    this.setColor(sc.next());
+		
+	}
+
 
 	//métodos getter y setter
 	public void setTipoManzana (String tm){
@@ -24,23 +42,11 @@ public class Manzana extends Producto{
 	public String getColor(){
 		return color;
 	}
-	public void setEurosKilo (Double ek){
-		eurosKilo = ek;
-	}
-	public Double getEurosKilo(){
-		return eurosKilo;
-	}
 	public void setDistribuidor (Distribuidor dis){
 		distribuidor = dis;
 	}
 	public Distribuidor getDistribuidor(){
 		return distribuidor;
-	}
-	public void setCod_Barras (Integer cb){
-		cod_barras = cb;
-	}
-	public Integer getCod_Barras(){
-		return cod_barras;
 	}
 	
 	
