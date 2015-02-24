@@ -1,14 +1,10 @@
 import java.util.*;
 import java.io.*;
 
-public class Manzana extends Productos{
+public class Manzana extends Producto{
 	//propiedades
 	private String tipoManzana;
-	private String procedencia;
 	private String color;
-	private Double eurosKilo;
-	private Distribuidor distribuidor;
-	private int cod_barras;
 
 	//métodos getter y setter
 	public void setTipoManzana (String tm){
@@ -18,7 +14,6 @@ public class Manzana extends Productos{
 		return tipoManzana;
 	}
 	public void setProcedencia (String pro){
-		procedencia = pro;
 	}
 	public String getProcedencia(){
 		return procedencia;

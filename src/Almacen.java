@@ -6,8 +6,44 @@ public class Almacen {
 
 public static void main (String args[]) throws IOException{		
 		Scanner sc = new Scanner(System.in);
+		
+		Distribuidores.leerDist(null);
 
-		Distribuidor.leerDist();
+		int seleccion;
+		do {
+			
+			//Visualiza por terminal (stdout) las opciones del men�
+			System.out.println("Mostrar distribuidores---------------------------1");
+			System.out.println("Solicitar productos------------------------------2");
+			System.out.println("Mostrar productos--------------------------------3");
+			System.out.println("SALIR DEL PROGRAMA-------------------------------4");
+			   
+			seleccion = sc.nextInt();
+			switch (seleccion) {
+				
+				case 1: //Mostrar distribuidores
+					Distribuidores.mostrarDist();
+					break;
+					
+				case 2: //Solicitar productos
+					productos = new Productos(sc);
+					break;
+				case 3: //Mostrar productos
+					if (productos == null) {
+						System.out.println("No es posible mostrar productos sin haber sido solicitados");
+					}
+					Productos.mostrarProductos();
+					break;
+				case 4: //Salimos
+					break;
+				default:
+					System.out.println("No ha insertado la opcion correcta");
+			}
+		} while (seleccion != 4);
+		System.out.println("Gracias por usar nuestro programa. Que tenga un buen día!");
+		sc.close();
+
+		
 		
 		 System.out.println("Introducir de productos: \n\n");
 			        

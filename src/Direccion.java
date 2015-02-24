@@ -5,6 +5,16 @@ public class Direccion {
 	private int cp;
 	private String calle;
 	private int numero;
+	
+public Direccion(String linedDireccion, String separator) {
+		
+		String[] strArray = linedDireccion.split(separator);
+		
+		this.setCiudad(strArray[1]);
+		this.setCP(Integer.parseInt(strArray[2]));
+		this.setCalle(strArray[3]);
+		this.setNumero(Integer.parseInt(strArray[4]));
+	}
 
 	//métodos getter y setter
 	public void setCiudad (String ciu){
@@ -30,6 +40,16 @@ public class Direccion {
 	}
 	public int getNumero(){
 		return numero;
+	}
+	public String formattedDireccion() {
+		String formattedDireccion = 
+				"DIRECCION:\n" +
+				this.ciudad + " " + 
+				this.cp + " " + 
+				this.calle + " " +
+				this.numero + " ";
+				
+				return formattedDireccion;
 	}
 	
 

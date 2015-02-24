@@ -39,43 +39,26 @@ public class Distribuidor {
 	}
 	
 		
-	public final static void leerDist() throws IOException{
+	public Distribuidor() {
 		
-		File archivo = new File("/home/zubiri/proyectojava/java2/java2_AlmacenBerria/src/distribuidores.txt");
-		FileReader fr = new FileReader(archivo);
-		BufferedReader br = new BufferedReader(fr);
-		String linea = br.readLine();
-
-		ArrayList<Distribuidor> distribuidores = new ArrayList<Distribuidor>();
-		String [] parte = null;
-		String [] parte1 = null;
-		String [] parte2 = null;
-		String [] parte3 = null;
-		while ((linea != null) || (linea == "")) {
-			parte = linea.split(";");
-			Distribuidor distribuidor = new Distribuidor();
-			distribuidor.setNombre(parte[0]);
-			distribuidor.setCif(parte[1]);
-
-			parte2 = parte[2].split(",");
-			Direccion direccion = new Direccion();
-			direccion.setCiudad(parte2[0]);
-			direccion.setCalle(parte2[1]);
-			direccion.setNumero(Integer.parseInt(parte2[2]));
-			direccion.setCP(Integer.parseInt(parte2[3]));
-			distribuidor.setDireccion(direccion);
-
-			parte3 = parte[3].split(",");
-			Contacto contacto = new Contacto();
-			contacto.setNombre(parte3[0]);
-			contacto.setApellido(parte3[1]);
-			contacto.setEmail(parte3[2]);
-			contacto.setDNI(parte3[3]);
-			distribuidor.setPersonaContacto(contacto);
-
-			distribuidores.add(distribuidor);
-			linea = br.readLine();
-		}
+	}
+	
+	public Distribuidor(String linedDistribuidor, String separator) {
 		
+		
+		String[] strArray = linedDistribuidor.split(separator);
+		this.setNombre(strArray[0]);
+		this.setCif(strArray[1]);
+		this.setDireccion(new Direccion(strArray[2],";"));
+		this.setPersonaContacto(new Contacto(strArray[3],";"));
+	}
+	public String formattedDistribuidor() {
+		String distribuidorStr = 
+				"NOMBRE DISTRIBUIDOR:" + this.nombre + "\n" + 
+				"CIF:" + this.cif  + "\n" + 
+				"\t" + this.direccion.formattedDireccion() + "\n" +
+				"\t" + this.personaContacto.formattedContacto() + "\n";
+				
+				return distribuidorStr;
 	}
 }
